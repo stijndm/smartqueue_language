@@ -1,0 +1,6 @@
+name = Smartqueue language
+description = Creates a node queue for each language
+package = Nodequeue
+core = 6.x
+dependencies[] = nodequeue 
+dependencies[] = locale
