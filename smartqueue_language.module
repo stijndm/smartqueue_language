@@ -123,6 +123,10 @@ function smartqueue_language_nodequeue_autocomplete($queue, $subqueue, $string, 
     $where .=  " AND n.language = '%s'";
     $where_args[] = $subqueue->reference;
   }
+  
+  if (module_exists('i18n')) {
+    i18n_selection_mode('off');
+  }
 
   $result = db_query_range(db_rewrite_sql("SELECT n.nid, n.title FROM {node} n WHERE $where"), $where_args, 0, 10);
   while ($node = db_fetch_object($result)) {
