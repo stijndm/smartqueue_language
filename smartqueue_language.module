@@ -140,10 +140,10 @@ function smartqueue_language_nodequeue_autocomplete($queue, $subqueue, $string, 
  * Implementation of hook_form_alter()
  */
 function smartqueue_language_form_alter(&$form, $form_state, $form_id) {
-  if ($form_id = 'locale_languages_edit_form') {
+  if ($form_id == 'locale_languages_edit_form') {
     $form['#submit'][] = 'smartqueue_language_language_edit';
   }
-  if ($form_id = 'locale_languages_delete_form') {
+  if ($form_id == 'locale_languages_delete_form') {
     $form['#submit'][] = 'smartqueue_language_language_delete';
   }
 }
